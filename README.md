@@ -104,3 +104,74 @@ S →2 .
 ## 📄 License
 
 This project is for academic and learning purposes. Feel free to modify or enhance it for your own maze-solving explorations.
+
+
+
+# Huffman Coding and Decoding in C++
+
+This is a C++ implementation of the **Huffman Coding** algorithm for data compression. It includes both **encoding** and **recursive decoding** functionality.
+
+## Features
+
+- Constructs a Huffman Tree from a set of characters and their frequencies
+- Generates Huffman codes for each character
+- Encodes a given string using the generated codes
+- Recursively decodes an encoded string back to the original message
+- Efficient use of memory and bit-level operations
+
+## Files
+
+- `main.cpp`: Contains the complete implementation of Huffman encoding and decoding.
+
+## Usage
+
+### Example Character Set and Frequencies
+```cpp
+char arr[] = {'A', 'B', 'C', 'D', 'E'};
+int freq[] = {5, 1, 6, 3, 2};
+```
+
+### Example Input Text
+```cpp
+"AABCADE"
+```
+
+### Output
+```
+Original character set and frequencies:
+A: 5
+B: 1
+C: 6
+D: 3
+E: 2
+
+Huffman Codes:
+A: 01
+B: 000
+C: 11
+D: 10
+E: 001
+
+Original text: AABCADE
+Encoded text: 0101000001111001001
+Decoded text: AABCADE
+```
+
+## How It Works
+
+1. **Min Heap Construction**: A min-heap is used to efficiently extract the two least frequent characters.
+2. **Huffman Tree Building**: Internal nodes are created by combining the two least frequent nodes repeatedly until the tree is complete.
+3. **Encoding**: Traverse the tree to generate binary codes for each character.
+4. **Decoding**: Use a recursive traversal of the tree based on the encoded binary string to recover the original text.
+
+## Compilation and Execution
+
+```sh
+g++ main.cpp -o huffman
+./huffman
+```
+
+## License
+
+This project is open-source and free to use under the MIT License.
+
